@@ -1,47 +1,96 @@
 # generator-nodemod [![Build Status](https://secure.travis-ci.org/fknussel/generator-nodemod.png?branch=master)](https://travis-ci.org/fknussel/generator-nodemod)
 
-> [Yeoman](http://yeoman.io) generator
+A [Yeoman](http://yeoman.io) generator for scaffolding simple node modules.
 
+## Built-in packages
 
-## Getting Started
+* [Jest](https://facebook.github.io/jest/): Painless JavaScript Unit Testing
+* [JSHint](http://jshint.com/): A JavaScript Code Quality Tool
+* [Grunt](http://gruntjs.com/): The JavaScript Task Runner
 
-### What is Yeoman?
+## Scaffolding a new node module
 
-Trick question. It's not a thing. It's this guy:
+1. Setup [npm](https://nodejs.org/) properly for your development environment.
 
-![](http://i.imgur.com/JHaAlBJ.png)
+2. Install [Yeoman](http://yeoman.io/) and its required libraries:
 
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
-
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
-
-```bash
-npm install -g yo
+```
+npm install -g yo grunt-cli
 ```
 
-### Yeoman Generators
+3. Install the [nodemod](https://github.com/fknussel/generator-nodemod) generator:
 
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
-
-To install generator-nodemod from npm, run:
-
-```bash
+```
 npm install -g generator-nodemod
 ```
 
-Finally, initiate the generator:
+4. Create a new directory and initialize a Git repo on it for your new node module:
 
-```bash
+```
+mkdir your-project
+cd your-project
+git init
+git remote add origin https://github.com/some-user/some-project.git
+```
+
+7. Run the generator:
+
+```
 yo nodemod
 ```
 
-### Getting To Know Yeoman
+8. Answer the questions.
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
+9. **STRONGLY RECOMMENDED:** commit the generated code to your git repository before making any modifications. This will make it much easier to see a diff of the work you have done vs. the generator output.
 
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+```
+git add --all
+git commit -m "Initial commit"
+```
 
+## Start writing your code
 
-## License
+See the `README.md` file in your newly created ui-component for more information.
 
-MIT
+## Release versions
+
+This repo uses [grunt-bump](https://github.com/gruntjs/grunt-bump) and Semantic Versioning to version and tag releases. To release a new version, run the appropriate command:
+
+```
+grunt release:major       # bump major version, eg. 1.0.2 -> 2.0.0
+grunt release:minor       # bump minor version, eg. 0.1.3 -> 0.2.0
+grunt release:patch       # bump patch version, eg. 0.0.1 -> 0.0.2
+grunt release:prerelease  # bump pre-release version, eg. 1.0.0 -> 1.0.0-1
+```
+
+Make sure to push tags:
+
+```
+git push --tags origin master
+```
+
+Publish the package to [npm's public registry](https://www.npmjs.com/):
+
+```
+npm publish
+```
+
+To make sure everything worked just fine, go to [http://npmjs.com/package/generator-ui](http://npmjs.com/package/generator-ui).
+
+**Heads up!** To publish, you must have a user on the npm registry. If you don't have one, create it with `npm adduser`. If you created one on the site, use `npm login` to store the credentials on the client. You can use `npm config ls` to ensure that the credentials are stored on your client. Check that it has been added to the registry by going to [http://npmjs.com/~](http://npmjs.com/~).
+
+## Semantic Versioning
+
+Given a version number `MAJOR.MINOR.PATCH`, increment the:
+
+1. `MAJOR` version when you make incompatible API changes,
+2. `MINOR` version when you add functionality in a backwards-compatible manner, and
+3. `PATCH` version when you make backwards-compatible bug fixes.
+
+Additional labels for pre-release and build metadata are available as extensions to the `MAJOR.MINOR.PATCH` format.
+
+See the [Semantic Versioning](http://semver.org/) specification for more information.
+
+## Release History
+
+See the [CHANGELOG](CHANGELOG.md).
