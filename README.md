@@ -1,4 +1,4 @@
-# generator-nodemod [![Build Status](https://secure.travis-ci.org/fknussel/generator-nodemod.png?branch=master)](https://travis-ci.org/fknussel/generator-nodemod)
+# generator-nodemod
 
 A [Yeoman](http://yeoman.io) generator for scaffolding simple node modules.
 
@@ -33,15 +33,15 @@ git init
 git remote add origin https://github.com/some-user/some-project.git
 ```
 
-7. Run the generator:
+5. Run the generator:
 
 ```
 yo nodemod
 ```
 
-8. Answer the questions.
+6. Answer the questions.
 
-9. **STRONGLY RECOMMENDED:** commit the generated code to your git repository before making any modifications. This will make it much easier to see a diff of the work you have done vs. the generator output.
+7. **STRONGLY RECOMMENDED:** commit the generated code to your git repository before making any modifications. This will make it much easier to see a diff of the work you have done vs. the generator output.
 
 ```
 git add --all

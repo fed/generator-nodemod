@@ -132,6 +132,11 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     projectfiles: function () {
+      // .travis.yml
+      this.fs.copy(
+        this.templatePath('travis.yml'),
+        this.destinationPath('.travis.yml')
+      );
       // .editorconfig
       this.fs.copy(
         this.templatePath('editorconfig'),
