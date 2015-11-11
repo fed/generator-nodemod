@@ -50,7 +50,7 @@ git commit -m "Initial commit"
 
 ## Start writing your code
 
-See the `README.md` file in your newly created ui-component for more information.
+See the `README.md` file in your newly created node module for more information.
 
 ## Release versions
 
@@ -75,7 +75,7 @@ Publish the package to [npm's public registry](https://www.npmjs.com/):
 npm publish
 ```
 
-To make sure everything worked just fine, go to [http://npmjs.com/package/generator-ui](http://npmjs.com/package/generator-ui).
+To make sure everything worked just fine, go to [http://npmjs.com/package/generator-nodemod](http://npmjs.com/package/generator-nodemod).
 
 **Heads up!** To publish, you must have a user on the npm registry. If you don't have one, create it with `npm adduser`. If you created one on the site, use `npm login` to store the credentials on the client. You can use `npm config ls` to ensure that the credentials are stored on your client. Check that it has been added to the registry by going to [http://npmjs.com/~](http://npmjs.com/~).
 

@@ -82,8 +82,12 @@ module.exports = yeoman.generators.Base.extend({
     this.prompt(prompts, function (props) {
       this.props = props;
       // To access props later use this.props.someOption;
-
-      done();
+      if (props.generatorUpToDate) {
+				done();
+			} else {
+				this.log('please make sure your generator is up-to-date');
+				process.exit(1);
+			}
     }.bind(this));
   },
 
